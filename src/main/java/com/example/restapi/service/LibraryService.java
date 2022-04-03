@@ -54,7 +54,7 @@ public class LibraryService {
     }
 
     public Book createBook(BookCreationRequest book) {
-        Optional<Author> author = authorRepository.findById(book.getAuthorId());
+        Optional<Author> author = authorRepository.findById(book.getId());
         if (!author.isPresent()) {
             throw new EntityNotFoundException(
                     "Author Not Found");
